@@ -1,0 +1,469 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:#00000000
+}
+
+.copyright{
+    font-size: 14px;
+}
+.fa-copyright:before {
+    box-sizing: border-box;
+    size:22px;
+
+}
+nav{
+    height: 80px;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: @rem calc((100vw - 1300px)/2);
+}
+nav ul li{
+    list-style-type: none;
+    display: inline;
+    padding: 0 25px ;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+nav ul li a:hover{
+    color: #780000;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    transition: .3s;
+    
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    justify-content: center;
+    align-items: center;
+    background-color: #c78a8a00;
+    color: #ffffff;
+}
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(LEKKI.jpeg) no-repeat center center/cover;
+    height: 730px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+
+}
+.logo{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0 0.7rem;
+    cursor: default;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: -1px;
+
+}
+
+.hero{
+    background: rgb(0, 0, 0);
+}
+
+
+.hero-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 95vh;
+    padding: @rem calc((100vw - 1300px)/2);
+}
+
+.column-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color:white;
+    padding: 0rem 2rem;
+}
+.column-left h1{
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+.column-left p{
+    margin-bottom: 2rem;
+    font-size: 1.5 rem;
+    line-height: 1.5;
+}
+
+img{
+    width:100%;
+    height: 100%;
+    position: relative;
+    
+}
+
+/* CONTACT */
+.c-form {
+  background-image: url('LEKKI.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+.contact-form{
+    background-color: #ffffff;
+    border: 10px solid;
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 15px;
+}
+
+.contact-form h1{
+    color: white;
+    padding-top: 70px;
+    text-align: center;
+    font-size: 50px;
+    
+}
+.contact-form h3{
+    text-align: center;
+    color: white;
+    font-size: small;
+    font-style: italic;
+    padding-bottom: 10px;
+    border: none;
+
+}
+input{
+    background-color: white;
+    width: 70%;
+    margin-left: 12%;
+    font-size: 13px;
+    padding: 16px 16px;
+    border-radius: 10px;
+    border-color: black;
+    margin-bottom: 20px;
+
+}
+textarea{
+    background-color: white;
+    width: 70%;
+    margin-left: 12%;
+    font-size: 13px;
+    padding: 16px 16px;
+    border-radius: 15px;
+    border-color: black;
+    margin-bottom: 25px;
+}
+input:focus-within {
+    outline: none;
+    border-color: #5bd183;
+    border-width: 3px;
+    
+}
+
+textarea:focus-within {
+    outline: none;
+    border-color: #5bd183;
+    border-width: 3px;
+}
+button{
+    background-color: #5bd183;
+    border-radius: 200px;
+    border-color: black;
+    font-size: 15px;
+    padding: 10px 18px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
+button:hover{
+    opacity: 80%;
+    cursor: pointer;
+}
+#social-media{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#social-media:hover{
+    color: #780000;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    margin: 2px 3px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .fa:hover{
+    opacity: 80%;
+    color: #780000;
+  }
+  .fa-tiktok{
+    font-size: 30px;
+    background: #000000;
+    color: white;
+    margin: 10px 10px;
+    text-decoration: none;
+  }
+  .fa-tiktok:hover{
+    color: #780000;
+    transition: 0.2s;
+  }
+  .fa-instagram {
+    font-size: 30px;
+    background: black;
+    color: white;
+    text-decoration: none;
+  }
+  .fa-instagram:hover{
+    color: #780000;
+    transition: 0.2s;
+  }
+  .fa-linkedin {
+    font-size: 30px;
+    background: #000000;
+    color: white;
+    text-decoration: none;
+  }
+  .fa-linkedin:hover{
+    color: #780000;
+    transition: 0.2s;
+  }
+/*ABOUT ME*/
+
+  .about {
+    color: white;
+    width: 100%;
+    padding: 78px 0px;
+  }
+  .main img{
+    width:420px;
+    height: 40%;
+    position: relative;
+    
+    border-radius: 100%;
+    justify-self:center;
+    top: -70px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .main img:hover {
+    transform: scale(1.1);
+  }
+  #emitter{
+    visibility: hidden;
+    background-color: #222;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 40%;
+    left: 0%;
+  }
+  .dot-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: visible;
+    z-index: 5000;
+    pointer-events: none;
+}
+
+.dot {
+    position: absolute;
+    pointer-events: none;
+}
+  .about-text{
+    width: 550px;
+    margin-left: 50px;
+  }
+  .main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+  .about-text h1{
+    color: #ffffff;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .about-text h5{
+    color: #ffffff;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+  }
+  .about-text p{
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+  }
+  .about-text h2{
+    color: #ffffff;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+
+  }
+  .text-center{
+    color: #ffffff;
+  }
+  
+  iframe{
+    width: 100%;
+    height: 500px;
+    border: 1px solid #780000;
+  }
+  .download-button{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #780000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.download-button:hover{
+    opacity: 0.7;
+    transition: 0.2s;
+}
+.resume-container{
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    left: 2px;
+}
+
+.columnss{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin: 20px;
+}
+.column-left h2 {
+    height: 200px;
+}
+
+/*PROJECTS*/
+
+  #projects{
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+  }
+  .main-text{
+    text-align: center;
+  }
+  .main-text p{
+    margin-bottom: 15px; 
+  }
+
+  .P1{
+    color: #ffffff;
+  }
+
+  footer{
+    text-align: center;
+    font-size: 10px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    color: #ffffff;
+    
+    
+}
+.h1.p.headings{
+  text-align: center;
+
+}
+.project-content{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px,auto));
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 5rem;
+}
+.row{
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.row img{
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.5s;
+}
+.layer{
+  width:100%;
+  height:100%;
+  position: absolute;
+  border-radius: 8px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+
+}
+.layer h5{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.layer p{
+  color: var(--second-color);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.layer i{
+  color:var(--main-color);
+  margin-top: 20px;
+  font-size: 20px;
+  background: var(--text-color);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+}
+.bx bx-link-eternal{
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.row:hover{
+  transform: scale(1.1);
+}
+
+.row:hover .layer{
+  height: 100%;
+}
