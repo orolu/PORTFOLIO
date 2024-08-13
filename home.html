@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width", initial-scale="1.0">
-        <title>OLUWADAMILOLA OROLUGBAGBE | 3020</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<style>
-    .heading{
-                    color: #ffffff;
-                    font-size: 50px;
-                    text-align: center;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-weight: lighter;
-                }
-                
-</style>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="content" style="display: none;">
         <nav>
             <div class="logo">O.OROLUGBAGBE</div>
             <ul>
@@ -25,18 +20,83 @@
                 <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="blog.html">Blog</a></li>
-               <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-
+            <div class="dark-mode-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            
+            
         </nav>
         <section id="home">
             <h1 class="heading">HI, I'M OLUWADAMILOLA</h1>
-            <h1 class="heading">DAMI for short</h1>
-            <p>3RD Year Student @ York</p>
+            <p>3rd Year Student @ YORK</p>
         </section>
-    
-        <footer style="background-color: black; color: #ffffff;">
-            <p>&copy; 2024 Oluwadamilola. All rights reserved.</p>
-        </footer>
-    </body>
+     
+    </div>
+    <hr>
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-copyright">
+                <p>&copy; 2024 Oluwadamilola. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function hideLoader() {
+            setTimeout(function() {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 2000); // 2 seconds delay
+        }
+
+        window.onload = function() {
+            hideLoader();
+            const darkModePreference = localStorage.getItem('darkMode') === 'true';
+            document.getElementById('darkModeToggle').checked = darkModePreference;
+            toggleDarkMode();
+        };
+
+        function toggleDarkMode() {
+            const isDarkMode = document.getElementById('darkModeToggle').checked;
+            const body = document.body;
+        
+            // Toggle dark mode class for body and nav
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                document.querySelector('nav').classList.add('dark-mode');
+                document.querySelector('footer').classList.add('dark-mode');
+                document.querySelector('.footer-container').classList.add('dark-mode');
+                
+                // Add dark-mode to all sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('dark-mode');
+                });
+        
+            } else {
+                body.classList.remove('dark-mode');
+                document.querySelector('nav').classList.remove('dark-mode');
+                document.querySelector('footer').classList.remove('dark-mode');
+                document.querySelector('.footer-container').classList.remove('dark-mode');
+                
+                // Remove dark-mode from all sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.remove('dark-mode');
+                });
+            }
+         
+            const label = document.querySelector('.dark-mode-toggle label');
+            
+           
+          
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+        
+    </script>
+</body>
 </html>
