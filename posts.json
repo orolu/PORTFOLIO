@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Enhancing User Experience with a Light/Dark Mode Toggle",
+        "date": "August 12, 2024",
+        "content" :"In this blog post, I’ll walk you through the process of implementing a light/dark mode switcher for my portfolio website. The goal was to enhance user experience by providing a theme switcher that toggles between light and dark modes.\n\nPlanning the Feature:\n\nI started by planning where to place the mode switcher button on my website. I searched for inspiration online and came across some great examples on FREEFRONTEND. This helped me decide on a toggle button design that fit well with the overall theme of my site I decided on a toggle button that would appear in the header, making it easily accessible on all pages.\n\nImplementing the Switcher:\n\nThey provided the HTML and CSS Styling that I used to design the toggle. Then, I wrote JavaScript to handle the switching mechanism, ensuring the theme persisted across different pages and sessions.\n\nTesting and Refinement:\n\nAfter implementation, I tested the switcher across various browsers and got feedback from my friends."
+    },
+    {
+        "title": "Building a Dynamic Blog Section Using JavaScript and JSON",
+        "date": "August 5, 2024",
+        "content": "In this blog post, I’ll share my experience building a dynamic blog section for my portfolio website using JavaScript and JSON. The goal was to create a section where I could easily add and manage blog posts without modifying the HTML structure.\n\nSetting Up the Blog Page:\n\nI began by creating a new HTML file (`blog.html`) to serve as the blog page. I designed a simple layout that would display the blog posts in a clean and organized manner.\n\nCreating the JSON File:\n\nNext, I created a JSON file (`posts.json`) to store my blog posts. I structured the data with fields for the title, date & content.\n\nFetching and Displaying Posts with JavaScript:\n\nI wrote JavaScript code to fetch the blog posts from the JSON file and dynamically generate the necessary HTML elements. This approach allowed me to easily update the content of the blog without touching the HTML.\n\nThis project taught me a lot about working with JavaScript and JSON. I’m looking forward to adding more features and making my blog even better."
+    }
+]
