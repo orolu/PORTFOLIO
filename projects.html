@@ -1,72 +1,99 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" initial-scale="1.0">
-        <link rel="stylesheet" href="style.css">
-        <style>
-            *{
-            background-color: #000000;
-            color:white;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO | Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+        <div class="logo">O.OROLUGBAGBE</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="dark-mode-toggle">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        
+    </nav>
+    <section class="projects" id="projects">
+        <div class="main-text">
+            <p class="heading">PROJECTS</p>
+            <h2>Latest Project</h2>
+        </div>
+        <div class="project-content">
+            <div class="row">
+                <img src="YUBITES.png" alt="YUBITES Project">
+                <div class="layer">
+                   
+                    <a href="https://www.figma.com/file/ZIRrBl82hyNsfz1sGZKgww/YORK-LANES?type=design&node-id=0%3A1&mode=design&t=hmA4wcOcDsYN6he3-1"><i class='bx bx-link-external'></i></a>
+
+                </div>
+                
+                <h5>YUBITES</h5>
+                <p>York Lanes Food Directory</p>
+            </div>
+            <!-- Repeat for other projects -->
+        </div>
+    </section>
+    <hr>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-copyright">
+                <p>&copy; 2024 Oluwadamilola. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            const isDarkMode = document.getElementById('darkModeToggle').checked;
+            const body = document.body;
+            
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                document.querySelector('nav').classList.add('dark-mode');
+                document.querySelector('footer').classList.add('dark-mode');
+                document.querySelector('.projects').classList.add('dark-mode');
+                document.querySelector('.contact-form-section').classList.add('dark-mode');
+                document.querySelector('.blog-container').classList.add('dark-mode');
+                document.querySelector('footer-container').classList.add('dark-mode');
+                document.querySelector('.footer-social-icons').classList.add('dark-mode');
+
+                document.querySelectorAll('.post').forEach(post => post.classList.add('dark-mode'));
+
+            } else {
+                body.classList.remove('dark-mode');
+                document.querySelector('nav').classList.remove('dark-mode');
+                document.querySelector('footer').classList.remove('dark-mode');
+                document.querySelector('.projects').classList.remove('dark-mode');
+                document.querySelector('.contact-form-section').classList.remove('dark-mode');
+                document.querySelector('.blog-container').classList.remove('dark-mode')
+                document.querySelector('.footer-container').classList.remove('dark-mode');
+                document.querySelectorAll('.post').forEach(post => post.classList.remove('dark-mode'));
             }
             
-    </style>
-    </head>
-    <body>
-        <nav>
-            <div class="logo">O.OROLUGBAGBE</div>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
-               <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-        </nav>
-        <section class="projects" id="projects">
-            <div class="main-text">
-                <p style="font-size: 30px;letter-spacing: 2px;font-weight: bolder;">PROJECTS</p>
-                <h2 style="font-size: 17px;"><span>Latest</span> Project</h2>
-            </div>
-            <div class="project-content">
-                <div class="row">
-                    <img src="YUBITES.png">
-                    <div class="layer">
-                        <h5>YUBITES</h5>
-                        <p>York Lanes Food Directory</p>
-                        <a href="https://www.figma.com/file/ZIRrBl82hyNsfz1sGZKgww/YORK-LANES?type=design&node-id=0%3A1&mode=design&t=hmA4wcOcDsYN6he3-1"><i class='bx bx-link-eternal'></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <img src="istockphoto-1467339432-640x640.jpg">
-                    <div class="layer">
-                        <h5>Unnamed Project</h5>
-                        <p>UI Design</p>
-                        <a href="#"><i class='bx bx-link-eternal'></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <img src="istockphoto-1467339432-640x640.jpg">
-                    <div class="layer">
-                        <h5>Possible API</h5>
-                        <p>Still learning</p>
-                        <a href="#"><i class='bx bx-link-eternal'></i></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <img src="istockphoto-1467339432-640x640.jpg">
-                    <div class="layer">
-                        <h5>Unnamed Project 2</h5>
-                        <p>Placeholder</p>
-                        <a href="#"><i class='bx bx-link-eternal'></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <footer style="background-color: black; color: #ffffff;">
-            <p>&copy; 2024 Oluwadamilola. All rights reserved.</p>
-        </footer>
-    </body>
-    </html>
+            
+          
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+    
+        window.onload = function() {
+            const darkModePreference = localStorage.getItem('darkMode') === 'true';
+            document.getElementById('darkModeToggle').checked = darkModePreference;
+            toggleDarkMode();
+        };
+    </script>
+    
+</body>
+</html>
