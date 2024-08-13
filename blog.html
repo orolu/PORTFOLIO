@@ -1,20 +1,98 @@
 <!DOCTYPE html> 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" initial-scale="1.0">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <nav>
-            <div class="logo">O.OROLUGBAGBE</div>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
-               <li><a href="contact.html">Contact</a></li>
-            </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO | Blog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">O.OROLUGBAGBE</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="dark-mode-toggle">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
 
-        </nav>
-    </body>
+    <section class="blog">
+        <div class="blog-container">
+            <h1 class="heading">My Blog</h1>
+            <p>Welcome to my blog! Here you will find articles on technology, development, and personal projects.</p>
+            
+            <div id="blog-posts" class="blog-posts">
+                <!-- Blog posts will be loaded here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-copyright">
+                <p>&copy; 2024 Oluwadamilola. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        function toggleDarkMode() {
+            const isDarkMode = document.getElementById('darkModeToggle').checked;
+            const body = document.body;
+            
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                document.querySelector('nav').classList.add('dark-mode');
+                document.querySelector('footer').classList.add('dark-mode');
+                document.querySelector('.blog-container').classList.add('dark-mode');
+                document.querySelectorAll('.post').forEach(post => post.classList.add('dark-mode'));
+            } else {
+                body.classList.remove('dark-mode');
+                document.querySelector('nav').classList.remove('dark-mode');
+                document.querySelector('footer').classList.remove('dark-mode');
+                document.querySelector('.blog-container').classList.remove('dark-mode');
+                document.querySelectorAll('.post').forEach(post => post.classList.remove('dark-mode'));
+            }
+
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+
+        window.onload = function() {
+            const darkModePreference = localStorage.getItem('darkMode') === 'true';
+            document.getElementById('darkModeToggle').checked = darkModePreference;
+            toggleDarkMode();
+        };
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('posts.json')
+                .then(response => response.json())
+                .then(posts => {
+                    const blogPostsContainer = document.getElementById('blog-posts');
+                    posts.forEach(post => {
+                        const postElement = document.createElement('div');
+                        postElement.classList.add('post');
+                        postElement.innerHTML = `
+                            <h2>${post.title}</h2>
+                            <p><em>${post.date}</em></p>
+                            <p>${post.content.replace(/\n/g, '</p><p>')}</p>
+                        `;
+                        blogPostsContainer.appendChild(postElement);
+                    });
+                })
+                .catch(error => console.error('Error fetching posts:', error));
+        });
+        
+    </script>
+</body>
+</html>
